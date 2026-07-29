@@ -12,7 +12,7 @@ def clean_html_to_text(html: str) -> str:
     try:
         extracted_text =  trafilatura.extract(
             html,
-            favor_recall = False,
+            favor_recall = False, # Maximise Precision (Remove irrelevent text) over completeness of the text
             output_format = "txt",
             include_comments = False,
             include_tables=False
