@@ -1,4 +1,4 @@
-import trafilatura
+import trafilatura # Used to extract text from HTML content
 import os
 from dotenv import load_dotenv
 load_dotenv()
