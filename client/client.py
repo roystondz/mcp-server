@@ -1,5 +1,3 @@
-
-import argparse
 import asyncio
 import logging
 
@@ -8,29 +6,13 @@ from mcp import ClientSession
 from mcp.client.stdio import stdio_client
 
 from config import server_info
-from utils.llm_helpers import generate_llm_response
+from utils import generate_llm_response
+from .cli import parse_arguments
 
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(
-        description="Query the MCP documentation server."
-    )
-    parser.add_argument(
-        "--query",
-        required=True,
-        help="The search query.",
-    )
-    parser.add_argument(
-        "--library",
-        required=True,
-        help="The library to search.",
-    )
-    return parser.parse_args()
 
 
 async def main():
