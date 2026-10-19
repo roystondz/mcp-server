@@ -1,5 +1,5 @@
 
-from utils import clean_html_to_text
+from utils.utils import clean_html_to_text
 
 import json
 import os
@@ -75,8 +75,8 @@ async def get_docs(query : str, library : str)->str:
     search_url = f"{base_url} {query}"
     results = await search(search_url)
 
-    if len(results["organic"]) == 0:
-        return "No result found"
+    if not results or not results.get("organic"):
+        return "No results found"
 
     context_list = []
     for result in results['organic']:
