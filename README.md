@@ -91,7 +91,7 @@ python client/client.py --query "How to start a Docker container?" --library "do
 ### Debugging with the MCP Inspector
 You can inspect the server, list tools, and execute them using the interactive MCP Inspector:
 ```bash
-npx @modelcontextprotocol/inspector uv run server/mcp_server.py
+npx -y @modelcontextprotocol/inspector -- uv run python -m server.mcp_server
 ```
 
 ---
